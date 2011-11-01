@@ -1,0 +1,20 @@
+%h1 Listing tasks
+
+- @tasks.each do |task|
+  %table
+    %tr
+      %th{:title => task.description}= link_to(task.name, task)
+    %tr
+      %td= progress_image(task.completion)
+    %tr
+      %td= "Estimate: #{task.estimate}/5"
+    %tr
+      %td= "Importance: #{task.importance}/5"
+    %tr
+      %td= "Urgency: #{task.urgency}/5"
+    %tr
+      %td= link_to 'Delete', task, confirm: 'Are you sure?', method: :delete
+
+%br
+
+= link_to 'New Task', new_task_path

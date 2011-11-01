@@ -9,6 +9,7 @@ gem 'therubyracer'
 
 gem 'sqlite3'
 gem 'ancestry'
+gem 'haml'
 
 
 # Gems used only for assets and not required
