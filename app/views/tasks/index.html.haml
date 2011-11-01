@@ -13,7 +13,14 @@
     %tr
       %td= "Urgency: #{task.urgency}/5"
     %tr
-      %td= link_to 'Delete', task, confirm: 'Are you sure?', method: :delete
+      %td= "Sub-tasks: #{task.children.count}"
+    %tr
+      %td= "Parent: #{task.parent.name if task.parent}"
+    %tr
+      %td
+        = link_to 'New sub-task', new_task_path(:parent_id => task.id)
+        |
+        = link_to 'Delete', task, confirm: 'Are you sure?', method: :delete
 
 %br
 
