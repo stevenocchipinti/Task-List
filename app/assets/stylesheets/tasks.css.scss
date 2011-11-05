@@ -5,14 +5,56 @@ body {
   background-color: #fff;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px; 
+  font-size: 90%;
+  line-height: 18px;
 }
-table {
+.task {
   margin: 10px;
-  padding: 20px;
+  padding: 10px 20px;
   width: 300px;
   border: 1px solid #DDD;
+
+  .header {
+    vertical-align: middle;
+    height: 25px;
+    margin: 5px 0px;
+    overflow: hidden;
+    .progress {
+      padding-top: 4px;
+      float:left;
+      width: 25px;
+      height: 25px;
+    }
+    a.title {
+      display: block;
+      margin-left: 75px;
+      padding-top: 4px;
+      height: 20px;
+      overflow: hidden;
+      color: #000;
+      font-size: 1.3em;
+      text-decoration: none;
+      &:hover { text-decoration: underline; }
+    }
+  }
+  .body {
+    /*display: none;*/
+    margin-top: 15px;
+    .summary {
+      height: 20px;
+      vertical-align: middle;
+      span.box {
+        border: 1px solid #DDD;
+        padding: 3px;
+        margin: 10px 10px 10px 3px;
+      }
+    }
+    .actions {
+      height: 20px;
+      vertical-align: middle;
+      margin: 10px 0px 0px 0px;
+    }
+  }
 }
 
 /* Progress sprite classes */

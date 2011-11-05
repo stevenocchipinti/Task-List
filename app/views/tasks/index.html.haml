@@ -1,27 +1,29 @@
 %h1 Listing tasks
 
 - @tasks.each do |task|
-  %table
-    %tr
-      %th{:title => task.description}= link_to(task.name, task)
-    %tr
-      %td= progress_image(task.completion)
-    %tr
-      %td= "Estimate: #{task.estimate}/5"
-    %tr
-      %td= "Importance: #{task.importance}/5"
-    %tr
-      %td= "Urgency: #{task.urgency}/5"
-    %tr
-      %td= "Sub-tasks: #{task.children.count}"
-    %tr
-      %td= "Parent: #{task.parent.name if task.parent}"
-    %tr
-      %td
-        = link_to 'New sub-task', new_task_path(:parent_id => task.id)
+  .task
+    .header{:title => task.description}
+      = progress_image(task.completion)
+      = link_to(task.name, task, :class => :title)
+    .body
+      .summary
+        %span.box
+          %b E:
+          #{task.estimate}/5
+        %span.box
+          %b I:
+          #{task.importance}/5
+        %span.box
+          %b U:
+          #{task.urgency}/5
+        %span.box
+          %b ST's:
+          #{task.children.count}
+      .actions
+        = link_to('New sub-task', new_task_path(:parent_id => task.id))
         |
-        = link_to 'Delete', task, confirm: 'Are you sure?', method: :delete
+        = link_to('Delete', task, confirm: 'Are you sure?', method: :delete)
 
 %br
 
-= link_to 'New Task', new_task_path
+= link_to('New Task', new_task_path)
