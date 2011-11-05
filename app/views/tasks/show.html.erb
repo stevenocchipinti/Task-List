@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= nested_tasks(@task.subtree.arrange) %>
+
 <p>
   <b>Name:</b>
   <%= @task.name %>
