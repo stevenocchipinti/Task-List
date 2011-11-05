@@ -1,0 +1,22 @@
+.task
+  .header{:title => task.description}
+    = progress_image(task.completion)
+    = link_to(task.name, task, :class => :title)
+  .body
+    .summary
+      %span.box
+        %b E:
+        #{task.estimate}/5
+      %span.box
+        %b I:
+        #{task.importance}/5
+      %span.box
+        %b U:
+        #{task.urgency}/5
+      %span.box
+        %b ST's:
+        #{task.children.count}
+    .actions
+      = link_to('New sub-task', new_task_path(:parent_id => task.id))
+      |
+      = link_to('Delete', task, confirm: 'Are you sure?', method: :delete)
