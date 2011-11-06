@@ -1,6 +1,7 @@
-// Place all the styles related to the tasks controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*******************************************************************************
+ * Page
+ ******************************************************************************/
+
 body {
   background-color: #fff;
   color: #333;
@@ -8,6 +9,12 @@ body {
   font-size: 90%;
   line-height: 18px;
 }
+
+
+/*******************************************************************************
+ * Tasks
+ ******************************************************************************/
+
 .task {
   margin: 10px;
   padding: 10px 20px;
@@ -56,10 +63,14 @@ body {
     }
   }
 }
-
 .nested_tasks {
   margin-left: 30px;
 }
+
+
+/*******************************************************************************
+ * Widgets
+ ******************************************************************************/
 
 /* Progress sprite classes */
 .progress {
@@ -93,3 +104,31 @@ body {
 .progress-22 { background: url('progress.png') no-repeat 0px -550px; }
 .progress-23 { background: url('progress.png') no-repeat 0px -575px; }
 .progress-24 { background: url('progress.png') no-repeat 0px -600px; }
+
+
+/*******************************************************************************
+ * Ratings - For my modified version of jquery.rating.js
+ ******************************************************************************/
+
+div.star-rating {
+  a.rating-img-completion { background: url(completion.gif) no-repeat 0 0px; }
+  a.rating-img-estimate   { background: url(wrench.gif) no-repeat 0 0px; }
+  a.rating-img-importance { background: url(star.gif) no-repeat 0 0px; }
+  a.rating-img-urgency    { background: url(clock.gif) no-repeat 0 0px; }
+}
+
+div.star-rating-on {
+  a.rating-img { background-position: 0 -16px!important }
+  a.rating-img-completion { @extend.rating-img }
+  a.rating-img-estimate   { @extend.rating-img }
+  a.rating-img-importance { @extend.rating-img }
+  a.rating-img-urgency    { @extend.rating-img }
+}
+
+div.star-rating-hover {
+  a.rating-img { background-position: 0 -32px }
+  a.rating-img-completion { @extend a.rating-img }
+  a.rating-img-estimate   { @extend a.rating-img }
+  a.rating-img-importance { @extend a.rating-img }
+  a.rating-img-urgency    { @extend a.rating-img }
+}

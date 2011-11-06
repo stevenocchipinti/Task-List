@@ -1,3 +1,5 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+jQuery ->
+  $('input[type=radio].completion').rating({imgClass: 'rating-img-completion'})
+  $('input[type=radio].estimate').rating({imgClass: 'rating-img-estimate'})
+  $('input[type=radio].importance').rating({imgClass: 'rating-img-importance'})
+  $('input[type=radio].urgency').rating({imgClass: 'rating-img-urgency'})

@@ -18,8 +18,8 @@ module TasksHelper
   end
 
 
-  def rating_tags(name, container, selected = nil, options = {})
-    container.collect do |element|
+  def rating_tags(name, items, selected = nil, options = {})
+    items.collect do |element|
       text, value = option_text_and_value(element).collect { |item| item.to_s }
       opts = {:class => :star, :title => text}.merge(options)
       radio_button_tag(name, value, (selected.to_s == value), opts)

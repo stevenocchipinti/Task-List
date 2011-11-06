@@ -1,3 +1,4 @@
+= stylesheet_link_tag "jquery.rating.css"
 = javascript_include_tag "jquery.rating.js"
 
 = form_for(@task) do |f|
@@ -23,25 +24,25 @@
   .field
     = f.label :completion
     %br
-    = rating_tags("task[completion]", Task.completion_options, @task.completion)
+    = rating_tags("task[completion]", Task.completion_options, @task.completion, :class => "completion")
     %br
 
   .field
     = f.label :estimate
     %br
-    = rating_tags("task[estimate]", Task.estimate_options, @task.estimate)
+    = rating_tags("task[estimate]", Task.estimate_options, @task.estimate, :class => "estimate")
     %br
 
   .field
     = f.label :importance
     %br
-    = rating_tags("task[importance]", Task.importance_options, @task.importance)
+    = rating_tags("task[importance]", Task.importance_options, @task.importance, :class => "importance")
     %br
 
   .field
     = f.label :urgency
     %br
-    = rating_tags("task[urgency]", Task.urgency_options, @task.urgency)
+    = rating_tags("task[urgency]", Task.urgency_options, @task.urgency, :class => "urgency")
     %br
 
   .actions
