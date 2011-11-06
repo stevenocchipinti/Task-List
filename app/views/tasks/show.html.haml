@@ -1,0 +1,25 @@
+%p{:id => "notice"}= notice
+
+%p
+  %b Name:
+  = @task.name
+%p
+  %b Description:
+  = @task.description
+%p
+  %b Completion:
+  = @task.completion
+%p
+  %b Estimate:
+  = @task.estimate
+%p
+  %b Importance:
+  = @task.importance
+%p
+  %b Urgency:
+  = @task.urgency
+
+
+= link_to 'Edit', edit_task_path(@task)
+|
+= link_to 'Back', tasks_path
