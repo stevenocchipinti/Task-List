@@ -1,7 +1,9 @@
+= javascript_include_tag "jquery.rating.js"
+
 = form_for(@task) do |f|
   - if @task.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@task.errors.count, "error")} prohibited this task from being saved:"
+      %h2= "#{pluralize(@task.errors.count, "error")}:"
       %ul
       - @task.errors.full_messages.each do |msg|
         %li= msg
@@ -21,22 +23,26 @@
   .field
     = f.label :completion
     %br
-    = f.text_field :completion
+    = rating_tags("task[completion]", Task.completion_options, @task.completion)
+    %br
 
   .field
     = f.label :estimate
     %br
-    = f.number_field :estimate
+    = rating_tags("task[estimate]", Task.estimate_options, @task.estimate)
+    %br
 
   .field
     = f.label :importance
     %br
-    = f.number_field :importance
+    = rating_tags("task[importance]", Task.importance_options, @task.importance)
+    %br
 
   .field
     = f.label :urgency
     %br
-    = f.number_field :urgency
+    = rating_tags("task[urgency]", Task.urgency_options, @task.urgency)
+    %br
 
   .actions
     = f.submit
