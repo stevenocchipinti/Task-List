@@ -9,7 +9,11 @@ module TasksHelper
 
   def nested_tasks(tasks)
     tasks.map do |task, sub_tasks|
-      render(task) + content_tag(:div, nested_tasks(sub_tasks), :class => "nested_tasks")
+      render(task, :subtasks => sub_tasks.count) + content_tag(
+        :div,
+        nested_tasks(sub_tasks),
+        :class => "nested_tasks"
+      )
     end.join.html_safe
   end
 
